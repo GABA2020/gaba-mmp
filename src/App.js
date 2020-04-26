@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Header from "./components/header";
+import Footer from "./components/footer";
+import Home from "./components/pages/home";
+import About from "./components/pages/about";
+import Profile from "./components/pages/profile";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <Router>
+          <Header />
+
+          <Switch>
+            {/* todo: map over links */}
+            <Route path="/about" component={About} />
+            <Route path="/profile" exact component={Profile} />
+            <Route path="/profile/:profileId" component={Profile} />
+            <Route path="/" component={Home} />
+            <Route path="*">
+              <p>404 - no page exists</p>
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </div>
+    );
+  }
 }
 
 export default App;
