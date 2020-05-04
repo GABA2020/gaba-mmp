@@ -5,11 +5,7 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header>
-      <nav>
-        <Link to="/">GABA</Link>
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
+      <Link to="/">GABA</Link>
       <Link to="/profile">Profile</Link>
     </header>
   );

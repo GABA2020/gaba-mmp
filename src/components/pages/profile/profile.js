@@ -8,7 +8,7 @@ const Profile = ({ match  }) => {
   
 
   return (
-    <div>user profile page{profileId && `: ${profileId}`}</div>
+    <div class="page-content">user profile page{profileId && `: ${profileId}`}</div>
   );
 };
 
