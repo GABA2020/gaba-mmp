@@ -1,7 +1,110 @@
 header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 50px;
+    justify-content: flex-start;
+    height: 60px;
     padding: 0 20px;
+    font-size: 18px;
 }
+
+.menu {
+    font: inherit;
+    display: inline-block;
+    overflow: visible;
+    margin: 0;
+    padding-right: 20px;
+    cursor: pointer;
+    transition-timing-function: linear;
+    transition-duration: .15s;
+    transition-property: opacity,filter;
+    text-transform: none;
+    color: inherit;
+    border: 0;
+    background-color: transparent;
+    height: 18px;
+}
+
+.menu-box {
+    position: relative;
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+}
+
+.menu--spin .menu-inner {
+    transition-timing-function: cubic-bezier(.55,.055,.675,.19);
+    transition-duration: .22s;
+}
+
+.menu-inner {
+    top: 50%;
+    display: block;
+    margin-top: -2px;
+}
+
+.menu-inner:after, .menu-inner:before {
+    display: block;
+    content: "";
+}
+
+.menu-inner:before {
+    top: -8px;
+}
+
+.menu-inner:after {
+    bottom: -8px;
+}
+
+.menu--spin .menu-inner:before {
+    transition: top .1s ease-in .25s,opacity .1s ease-in;
+}
+
+.menu--spin .menu-inner:after {
+    transition: bottom .1s ease-in .25s,transform .22s cubic-bezier(.55,.055,.675,.19);
+}
+
+.menu-inner, .menu-inner:after, .menu-inner:before {
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    transition-timing-function: ease;
+    transition-duration: .15s;
+    transition-property: transform;
+    background-color: #000;
+}
+
+.menu.is-active:hover, .menu:hover {
+    opacity: .7;
+}
+
+.menu--spin.is-active .menu-inner {
+    transition-delay: .12s;
+    transition-timing-function: cubic-bezier(.215,.61,.355,1);
+    transform: rotate(225deg);
+}
+
+.menu--spin.is-active .menu-inner:before {
+    top: 0;
+    transition: top .1s ease-out,opacity .1s ease-out .12s;
+    opacity: 0;
+}
+
+.menu--spin.is-active .menu-inner:after {
+    bottom: 0;
+    transition: bottom .1s ease-out,transform .22s cubic-bezier(.215,.61,.355,1) .12s;
+    transform: rotate(-90deg);
+}
+
+.menu.is-active .menu-inner, .menu.is-active .menu-inner:after, .menu.is-active .menu-inner:before {
+    background-color: #000;
+}
+
+a[href="/profile"] {
+    margin-left: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
