@@ -5,6 +5,10 @@ header {
     height: 60px;
     padding: 0 20px;
     font-size: 18px;
+    border-bottom: 1px solid #9E9E9E;
+    position: relative;
+    z-index: 2;
+    background: #fff;
 }
 
 .menu {
@@ -106,5 +110,24 @@ a[href="/profile"] {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+nav {
+    height: calc(100vh - 1px);
+    background: #fff;
+    z-index: 1;
+    width: 100vw;
+    position: absolute;
+    top: -100vh;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #9E9E9E;
+    transition: top 1s;
+}
+
+nav.open {
+    top: 0;
 }
 
