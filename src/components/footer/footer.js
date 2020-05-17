@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <p>footer</p>
-      <Link to="/about">About Us</Link>
-    </div>
+    <footer>
+      <Link className="logo-type" to="/">GABA</Link>
+    </footer>
   );
 };
 
